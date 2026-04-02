@@ -26,17 +26,64 @@ Step1:Launch EC2 Instance
 <img width="1918" height="1031" alt="Screenshot 2026-03-04 214201" src="https://github.com/user-attachments/assets/4eadf7cd-2924-4bb0-8031-7f8d0299b6d0" />
 
 .sudo yum update -y
+
 .sudo yum install httpd -y
+
 .sudo systemctl start httpd
+
 .echo " AWS Backup Test Page" > /var/www/html/index.html
+
 <img width="1917" height="960" alt="Screenshot 2026-03-04 214300" src="https://github.com/user-attachments/assets/4c3db14c-2fd0-44fd-95ed-1a1497f93ebc" />
 
 Step2:Create RDS Database
 - Created RDS MySQL instance  
+  <img width="1919" height="1023" alt="Screenshot 2026-03-04 214229" src="https://github.com/user-attachments/assets/dea44db2-95b6-4ac4-8571-46f4b830d8cc" />
 - Created database and table  
 - Inserted sample data
-  <img width="1919" height="1023" alt="Screenshot 2026-03-04 214229" src="https://github.com/user-attachments/assets/dea44db2-95b6-4ac4-8571-46f4b830d8cc" />
+  <img width="1918" height="961" alt="Screenshot 2026-03-07 155845" src="https://github.com/user-attachments/assets/ad07dc50-dc2d-4478-ac68-29c82e9378a0" />
+
+ Step 3: Create Backup Vault
+- Accessed AWS Backup service from AWS Console  
+- Created a backup vault named `MyBackupVault`  
+- Backup vault acts as a secure storage location for recovery points  
+- Used this vault in the backup plan configuration  
+ (Note: Screenshot not available)
+
+Step4:Step 4: Create Backup Plan
+- Created new backup plan  
+- Backup frequency: Daily  
+- Retention period: 7 days
+  <img width="1904" height="975" alt="Screenshot 2026-03-07 155531" src="https://github.com/user-attachments/assets/11cd1f1b-cc5e-4613-a4f0-47e31f506936" />
+
+  Step 5: Assign Resources
+- Selected EC2 instance  
+- Selected RDS database  
+- Assigned to backup plan  
+<img width="1905" height="1018" alt="Screenshot 2026-03-07 161035" src="https://github.com/user-attachments/assets/d972cb9b-b654-4121-8d7f-d8c07a8a88ed" />
+
+ Step 6: Run Backup Job
+- Triggered on-demand backup  
+- Verified backup job status  
+<img width="1916" height="1022" alt="Screenshot 2026-03-07 160100" src="https://github.com/user-attachments/assets/bf45b051-da24-40a2-b464-ea9528634088" />
+
+ Step 7: Verify Recovery Points
+- Checked backup vault  
+- Verified recovery points for EC2 & RDS  
+<img width="1919" height="1023" alt="Screenshot 2026-03-07 160344" src="https://github.com/user-attachments/assets/95cc3750-4acb-4efc-b20c-7040ab10af15" />
+
+ ✅ Result
+- Backup jobs completed successfully  
+- Recovery points created for EC2 and RDS  
+- Data protection strategy implemented
+
+  ⚠️ Challenges Faced
+- IAM role issue  
+- Resource selection confusion
+
+  ✅ Solutions
+- Used AWSBackupDefaultServiceRole  
+- Verified resource assignment properly  
 
 
-
-
+ 📌 Conclusion
+This project successfully demonstrates how to use AWS Backup for automated backup and recovery, ensuring data safety and disaster recovery readiness.
