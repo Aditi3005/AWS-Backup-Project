@@ -35,8 +35,11 @@ This project demonstrates how to implement a centralized backup strategy using A
 
 .Recovery point validation
 
+
+
 STEP:
 Step1:Launch EC2 Instance
+
 <img width="1918" height="1031" alt="Screenshot 2026-03-04 214201" src="https://github.com/user-attachments/assets/4eadf7cd-2924-4bb0-8031-7f8d0299b6d0" />
 
 .sudo yum update -y
