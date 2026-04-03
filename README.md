@@ -3,22 +3,36 @@ This project demonstrates how to implement a centralized backup strategy using A
 
 🎯 Objective
 .Configure automated backups for:
+
    .Amazon EC2
+   
    .Amazon RDS
+   
 .Create a centralized backup plan
+
 .Validate backup and recovery points
 
+
 🛠️ Services Used
+
 .AWS Backup
+
 .Amazon EC2
+
 .Amazon RDS
+
 .IAM (for permissions)
 
 ⚙️ Key Features
+
 .Automated backup scheduling
+
 .Centralized backup vault
+
 .Resource tagging for backup assignment
+
 .On-demand backup testing
+
 .Recovery point validation
 
 STEP:
